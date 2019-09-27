@@ -1,21 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;//////////// UI
 
 public class Arma : MonoBehaviour
 {
-    [SerializeField] GameObject prefabBala;
-    [SerializeField] Transform transformPuntoDeDisparo;
-    [SerializeField] float fuerzaDisparo;
-
+    [SerializeField] Text txtPuntuacion;//////////// UI
+    [SerializeField] GameObject prefabProyectil;
+    [SerializeField] Transform puntoInicioProyectil;
+    [SerializeField] float fuerza;
+    [SerializeField] int capacidadCargador;
+    public int numeroBalas;
+    private void Start()
+    {
+        numeroBalas = capacidadCargador;
+        txtPuntuacion.text = numeroBalas.ToString();//////////// UI
+    }
     public void Disparar()
     {
-        //1. Instanciar la bala (necesito el prefab de la bala)
-        GameObject bala = Instantiate(prefabBala);
-        //1.5. Posicionar la bala (necesito el punto de spawn)
-        bala.transform.position = transformPuntoDeDisparo.transform.position;
-        bala.transform.rotation = transformPuntoDeDisparo.transform.rotation;
-        //2.Impulsar la bala (necesito el rigidbody de la bala)
-        bala.GetComponent<Rigidbody>().AddForce(0, 0, fuerzaDisparo);
+        if (numeroBalas > 0)
+        {
+            numeroBalas--;
+            txtPuntuacion.text = numeroBalas.ToString();//////////// UI
+            //Generamos el proyectil
+            GameObject proyectil = Instantiate(prefabProyectil);
+            //Asignamos al proyectil la posición y rotación del punto de spawn
+            proyectil.transform.position = puntoInicioProyectil.position;
+            proyectil.transform.rotation = puntoInicioProyectil.rotation;
+            //Impulsamos el proyectil
+            proyectil.GetComponent<Rigidbody>().AddForce(proyectil.transform.forward * fuerza);
+        }
+        else
+        {
+            print("Cargador vacio");
+        }
     }
 }

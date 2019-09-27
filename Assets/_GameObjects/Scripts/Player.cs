@@ -6,19 +6,16 @@ public class Player : MonoBehaviour
 {
     [SerializeField] Arma arma;
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            Disparar();
+            ApretarGatillo();
         }
     }
 
-    void Disparar()
+    void ApretarGatillo()
     {
-        print("DISPARAR");
         arma.Disparar();
     }
-
-
 }
