@@ -10,12 +10,18 @@ public class Arma : MonoBehaviour
     [SerializeField] Transform puntoInicioProyectil;
     [SerializeField] float fuerza;
     [SerializeField] int capacidadCargador;
-    public int numeroBalas;
+    [SerializeField] int numeroBalas;
     private void Start()
     {
         numeroBalas = capacidadCargador;
         txtPuntuacion.text = numeroBalas.ToString();//////////// UI
     }
+    public void Recargar(int numeroBalasExtra)
+    {
+        numeroBalas = Mathf.Min(numeroBalas + numeroBalasExtra,capacidadCargador);
+        txtPuntuacion.text = numeroBalas.ToString();//////////// UI
+    }
+
     public void Disparar()
     {
         if (numeroBalas > 0)

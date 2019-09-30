@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] Arma arma;
+    private Arma otra;
 
     private void Update()
     {
@@ -13,6 +14,12 @@ public class Player : MonoBehaviour
             ApretarGatillo();
         }
     }
+
+    public void Recargar(int numeroBalas)
+    {
+        arma.Recargar(numeroBalas);
+    }
+
 
     void ApretarGatillo()
     {
