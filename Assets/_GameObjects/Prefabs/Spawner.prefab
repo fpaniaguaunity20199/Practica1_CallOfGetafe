@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 958289371730727073, guid: 9528e71ccb73b504fbc98c6f470007ce, type: 3}
   delay: 1
-  limit: 3
+  limit: 1

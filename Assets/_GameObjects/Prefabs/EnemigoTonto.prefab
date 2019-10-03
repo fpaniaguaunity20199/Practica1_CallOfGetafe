@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 958289371730727079}
   m_Layer: 0
   m_Name: EnemigoTonto
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,9 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f8f375f782b8b4480698a3622caf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
+  vida: 100
   danyo: 0
-  prefabExplosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+  prefabExplosion: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
+  textoVida: {fileID: 4799068035803563267}
   speed: 2
   tiempoEntreRotacion: 5
 --- !u!54 &958289371730727079

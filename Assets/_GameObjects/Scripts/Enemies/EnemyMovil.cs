@@ -6,8 +6,9 @@ public class EnemyMovil : Enemy
 {
     public float speed;
     public float tiempoEntreRotacion;
-    private void Start()
+    public void Start()
     {
+        base.Start();
         InvokeRepeating("Rotar", tiempoEntreRotacion, tiempoEntreRotacion);
     }
     private void Update()
