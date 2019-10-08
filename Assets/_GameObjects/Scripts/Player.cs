@@ -13,6 +13,13 @@ public class Player : MonoBehaviour
         {
             ApretarGatillo();
         }
+
+        //Recarga
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Recargar();
+        }
+        //Gestión de la activación de armas
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ActivarArma(0);
@@ -30,35 +37,38 @@ public class Player : MonoBehaviour
 
     void ActivarArma(int numeroArma)
     {
-        if (numeroArma != armaActiva)
+        //Ha elegido un arma que no existe
+        if (numeroArma < armas.Length)
         {
-            //OPCION 1
-
-            armas[armaActiva].gameObject.SetActive(false);
-            armaActiva = numeroArma;
-            armas[armaActiva].gameObject.SetActive(true);
-
-            //OPCION 2
-
-            /*
-            armaActiva = numeroArma;
-            for(int i = 0; i < armas.Length; i++)
+            if (numeroArma != armaActiva)
             {
-                armas[i].gameObject.SetActive(false);
+                //OPCION 1
+
+                armas[armaActiva].gameObject.SetActive(false);
+                armaActiva = numeroArma;
+                armas[armaActiva].gameObject.SetActive(true);
+
+                //OPCION 2
+
+                /*
+                armaActiva = numeroArma;
+                for(int i = 0; i < armas.Length; i++)
+                {
+                    armas[i].gameObject.SetActive(false);
+                }
+                armas[armaActiva].gameObject.SetActive(true);
+                */
             }
-            armas[armaActiva].gameObject.SetActive(true);
-            */
         }
     }
 
-    public void Recargar(int numeroBalas)
+    public void Recargar()
     {
-        //arma.Recargar(numeroBalas);
+        armas[armaActiva].Recargar();
     }
-
 
     void ApretarGatillo()
     {
-        //armas[armaActiva].Disparar();
+        armas[armaActiva].IntentarDisparar();
     }
 }

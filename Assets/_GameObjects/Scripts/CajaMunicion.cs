@@ -10,7 +10,7 @@ public class CajaMunicion : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             //Recargar el arma
-            other.gameObject.GetComponent<Player>().Recargar(numeroBalas);
+            //other.gameObject.GetComponent<Player>().Recargar(numeroBalas);
             //Hacemos que desaparezca el cubo
             Destroy(gameObject);
         }
