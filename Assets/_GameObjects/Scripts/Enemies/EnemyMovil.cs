@@ -13,6 +13,7 @@ public class EnemyMovil : Enemy
     }
     private void Update()
     {
+        base.Update();
         Mover();
     }
     public void Mover()

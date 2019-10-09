@@ -8,9 +8,24 @@ public class Enemy : MonoBehaviour
     public int danyo;//Daño que infringe al player
     public GameObject prefabExplosion;
     [SerializeField] TextMesh textoVida;
+    public static bool efectoMagia = false;
     public void Start()
     {
         textoVida.text = vida.ToString();
+    }
+    public void Update()
+    {
+        if (efectoMagia)
+        {
+            RecibirDanyo(50);
+            var renderer = GetComponent<Renderer>();
+            renderer.material.SetColor("_Color", Color.red);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        efectoMagia = false;
     }
 
     public void RecibirDanyo(int danyoRecibido)

@@ -71,4 +71,6 @@ public class Player : MonoBehaviour
     {
         armas[armaActiva].IntentarDisparar();
     }
+
+    
 }
