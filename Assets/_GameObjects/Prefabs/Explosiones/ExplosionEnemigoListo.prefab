@@ -88366,7 +88366,7 @@ GameObject:
   - component: {fileID: 1374689167752950266}
   - component: {fileID: -686456688469669222}
   m_Layer: 0
-  m_Name: ExplosionCool
+  m_Name: ExplosionEnemigoListo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88397,7 +88397,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e6ffe9a8cf2f1ec4bb4b756be089d51e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3d9efa2672474325b8f99fa7ed1eb96, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -109,10 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f8f375f782b8b4480698a3622caf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textoVida: {fileID: 4799068035803563267}
   vida: 100
   danyo: 0
   prefabExplosion: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
-  textoVida: {fileID: 4799068035803563267}
   speed: 2
   tiempoEntreRotacion: 5
 --- !u!54 &958289371730727079

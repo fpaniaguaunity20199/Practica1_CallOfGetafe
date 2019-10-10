@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    //ESTADO DEL ENEMIGO
+    protected enum ESTADO { Normal, Siguiendo};
+    protected ESTADO estado = ESTADO.Normal;
+    //REFERENCIAL PLAYER
+    protected GameObject player;
+
+    //CONFIGURACIÓN
+    [SerializeField] TextMesh textoVida;
     public int vida;
     public int danyo;//Daño que infringe al player
     public GameObject prefabExplosion;
-    [SerializeField] TextMesh textoVida;
     public static bool efectoMagia = false;
+
     public void Start()
     {
+        player = GameObject.Find("Player");
         textoVida.text = vida.ToString();
     }
     public void Update()

@@ -11,7 +11,7 @@ public class EnemyMovil : Enemy
         base.Start();
         InvokeRepeating("Rotar", tiempoEntreRotacion, tiempoEntreRotacion);
     }
-    private void Update()
+    public void Update()
     {
         base.Update();
         Mover();
@@ -22,6 +22,9 @@ public class EnemyMovil : Enemy
     }
     public void Rotar()
     {
-        transform.Rotate(0, Random.Range(-180, 180), 0);
+        if (estado != ESTADO.Siguiendo)
+        {
+            transform.Rotate(0, Random.Range(-180, 180), 0);
+        }
     }
 }
