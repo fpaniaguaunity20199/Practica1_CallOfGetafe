@@ -48,6 +48,7 @@ public abstract class Arma : MonoBehaviour
         }
     }
     public abstract void Disparar();
+    public abstract void SoltarGatillo();
     public void Recargar()
     {
         if (numeroCargadores > 0 && recargando == false)

@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
         {
             ApretarGatillo();
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            SoltarGatillo();
+        }
 
         //Recarga
         if (Input.GetKeyDown(KeyCode.R))
@@ -72,5 +76,9 @@ public class Player : MonoBehaviour
         armas[armaActiva].IntentarDisparar();
     }
 
+    void SoltarGatillo()
+    {
+        armas[armaActiva].SoltarGatillo();
+    }
     
 }

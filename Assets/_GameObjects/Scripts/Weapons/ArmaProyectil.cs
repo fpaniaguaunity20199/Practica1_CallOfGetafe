@@ -12,4 +12,9 @@ public class ArmaProyectil : Arma
         GameObject proyectil = Instantiate(prefabProyectil, puntoDisparo.position, puntoDisparo.rotation);
         proyectil.GetComponent<Rigidbody>().AddForce(puntoDisparo.forward * fuerza);
     }
+
+    public override void SoltarGatillo()
+    {
+        //NO HAGO NADA
+    }
 }

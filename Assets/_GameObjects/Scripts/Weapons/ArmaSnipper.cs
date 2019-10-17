@@ -7,6 +7,9 @@ public class ArmaSnipper : Arma
     [Header("Zoom")]
     [SerializeField] Camera camara;
     [SerializeField] Canvas canvas;
+    [Header("Weapon config.")]
+    [SerializeField] int danyo;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -22,6 +25,20 @@ public class ArmaSnipper : Arma
 
     public override void Disparar()
     {
-        print("DISPARANDO");
+        Ray rayo = new Ray(camara.transform.position, camara.transform.forward);
+        RaycastHit hitInfo;
+        bool hayImpacto = Physics.Raycast(rayo, out hitInfo);
+        if (hayImpacto)
+        {
+            if (hitInfo.transform.CompareTag("Enemy"))
+            {
+                hitInfo.transform.gameObject.GetComponent<Enemy>().RecibirDanyo(danyo);
+            }
+        }
+    }
+
+    public override void SoltarGatillo()
+    {
+        //NO HAGO NADA
     }
 }
