@@ -31,6 +31,7 @@ public abstract class Arma : MonoBehaviour
     {
         municionCargador = capacidadCargador;
         audioSource = GetComponent<AudioSource>();
+        print("AUDIOSOURCE:" + audioSource);
         audioSource.PlayOneShot(acReload);
     }
 
